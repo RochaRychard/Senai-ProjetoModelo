@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,7 +67,9 @@
             this.txtEnderecoUf = new System.Windows.Forms.TextBox();
             this.txtEnderecoCep = new System.Windows.Forms.MaskedTextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -123,6 +126,7 @@
             this.txtNome.Size = new System.Drawing.Size(196, 27);
             this.txtNome.TabIndex = 4;
             this.txtNome.Tag = "Obrigatorio";
+            this.txtNome.Validating += new System.ComponentModel.CancelEventHandler(this.txtNome_Validating);
             // 
             // label4
             // 
@@ -145,11 +149,12 @@
             // txtCpf
             // 
             this.txtCpf.Location = new System.Drawing.Point(640, 118);
-            this.txtCpf.Mask = "###.###.###-##";
+            this.txtCpf.Mask = "###,###,###-##";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(109, 27);
             this.txtCpf.TabIndex = 7;
             this.txtCpf.Tag = "Obrigatorio";
+            this.txtCpf.Validating += new System.ComponentModel.CancelEventHandler(this.txtCpf_Validating);
             // 
             // txtDataNascimento
             // 
@@ -160,6 +165,7 @@
             this.txtDataNascimento.TabIndex = 8;
             this.txtDataNascimento.Tag = "Obrigatorio";
             this.txtDataNascimento.ValidatingType = typeof(System.DateTime);
+          
             // 
             // txtEmail
             // 
@@ -168,6 +174,7 @@
             this.txtEmail.Size = new System.Drawing.Size(196, 27);
             this.txtEmail.TabIndex = 10;
             this.txtEmail.Tag = "Obrigatorio";
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // label6
             // 
@@ -404,6 +411,10 @@
             this.label18.TabIndex = 37;
             this.label18.Text = "UF";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -452,6 +463,7 @@
             this.Text = "frmCadastroFuncionario";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,5 +509,6 @@
         private System.Windows.Forms.TextBox txtEnderecoUf;
         private System.Windows.Forms.MaskedTextBox txtEnderecoCep;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
