@@ -1,9 +1,10 @@
-﻿using System;
+﻿using AppModelo.Model.Domain.Entities;
+using Dapper;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Utilities.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AppModelo.Model.Infra.Repositories
 {
@@ -11,17 +12,42 @@ namespace AppModelo.Model.Infra.Repositories
     {
         //CRUD - create - read - update- delete
         //       insert - select - update - delete
-         Public bool Inserir() { }
-
-         Public bool Atualizar() { }
-
-         Public bool Remover() { }
-
-         Public List <NacionalidadeEntity> ObterTodos()
+         public bool Inserir(string descricao) 
          {
-            var sql = "SELECT * FROM nacionalidades";
+            //STRING INTERPOLATION
+            var sql = $"INSERT INTO nacionalidades(Descricao) VALUES('{descricao}')";
+
+            using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
+
+            var resultado = conexaoBd.Execute(sql);
+
+            return resultado > 0;
+        }
+
+         public bool Atualizar() 
+         { 
+            return false;
          }
 
-         Public NacionalidadeEntity ObterPorId() { }
+         public bool Remover() 
+         {
+            return false;
+         }
+
+         public IEnumerable<NacionalidadeEntity> ObterTodos()
+         {
+            var sql = "SELECT * FROM nacionalidades";
+
+            using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
+            
+            var resultado = conexaoBd.Query<NacionalidadeEntity>(sql);
+
+            return resultado;
+         }
+
+         public NacionalidadeEntity ObterPorId() 
+         {
+            return new NacionalidadeEntity();
+         }
     }
 }

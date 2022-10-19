@@ -165,7 +165,6 @@
             this.txtDataNascimento.TabIndex = 8;
             this.txtDataNascimento.Tag = "Obrigatorio";
             this.txtDataNascimento.ValidatingType = typeof(System.DateTime);
-          
             // 
             // txtEmail
             // 
