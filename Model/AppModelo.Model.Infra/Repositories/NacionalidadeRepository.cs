@@ -1,10 +1,8 @@
 ﻿using AppModelo.Model.Domain.Entities;
 using Dapper;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Utilities.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace AppModelo.Model.Infra.Repositories
 {
@@ -36,7 +34,7 @@ namespace AppModelo.Model.Infra.Repositories
 
          public IEnumerable<NacionalidadeEntity> ObterTodos()
          {
-            var sql = "SELECT * FROM nacionalidades";
+            var sql = "SELECT Id, Descricao nacionalidades ORDER BY descricao ASC";
 
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
             
