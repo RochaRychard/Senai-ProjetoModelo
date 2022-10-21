@@ -1,6 +1,5 @@
 ﻿using AppModelo.Model.Domain.Entities;
 using AppModelo.Model.Infra.Repositories;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace AppModelo.Controller.Cadastros
