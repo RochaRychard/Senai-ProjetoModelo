@@ -1,12 +1,13 @@
 ﻿using AppModelo.Model.Domain.Entities;
 using Dapper;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Ocsp;
 using System.Collections.Generic;
 using System.Data;
 
 namespace AppModelo.Model.Infra.Repositories
 {
-    internal class NaturalidadeRepository
+    public class NaturalidadeRepository
     {
         //CRUD - create - read - update- delete
         //       insert - select - update - delete
@@ -46,6 +47,11 @@ namespace AppModelo.Model.Infra.Repositories
         public NaturalidadeEntity ObterPorId()
         {
             return new NaturalidadeEntity();
+        }
+
+        public List<NaturalidadeEntity> GetResultado()
+        {
+            return resultado;
         }
     }
 }

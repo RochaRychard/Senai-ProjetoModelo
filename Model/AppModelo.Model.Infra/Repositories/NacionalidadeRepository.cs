@@ -8,9 +8,11 @@ namespace AppModelo.Model.Infra.Repositories
 {
     public class NacionalidadeRepository
     {
+        private IEnumerable<NacionalidadeEntity> resultado;
+
         //CRUD - create - read - update- delete
         //       insert - select - update - delete
-         public bool Inserir(string descricao) 
+        public bool Inserir(string descricao) 
          {
             //STRING INTERPOLATION
             var sql = $"INSERT INTO nacionalidades(Descricao) VALUES('{descricao}')";
@@ -32,18 +34,24 @@ namespace AppModelo.Model.Infra.Repositories
             return false;
          }
 
-         public IEnumerable<NacionalidadeEntity> ObterTodos()
-         {
-            var sql = "SELECT Id, Descricao nacionalidades ORDER BY descricao ASC";
+        public IEnumerable<NacionalidadeEntity> GetResultado()
+        {
+            return resultado;
+        }
+
+        public IEnumerable<NacionalidadeEntity> GetObterTodos(IEnumerable<NacionalidadeEntity> resultado)
+        {
+            //var sql = "SELECT Id, Descricao nacionalidades ORDER BY descricao ASC";
+            var sql = "SELECT Id, Descricao FROM nacionalidades ORDER BY Descricao ASC";
 
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
-            
-            var resultado = conexaoBd.Query<NacionalidadeEntity>(sql);
 
-            return resultado;
-         }
+            var v = conexaoBd.Query<NacionalidadeEntity>(sql);
 
-         public NacionalidadeEntity ObterPorId() 
+            return v;
+        }
+
+        public NacionalidadeEntity ObterPorId() 
          {
             return new NacionalidadeEntity();
          }

@@ -52,18 +52,21 @@
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
             this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
+            this.funcionáriosToolStripMenuItem.Click += new System.EventHandler(this.funcionáriosToolStripMenuItem_Click);
             // 
             // nacionalidadeToolStripMenuItem
             // 
             this.nacionalidadeToolStripMenuItem.Name = "nacionalidadeToolStripMenuItem";
             this.nacionalidadeToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.nacionalidadeToolStripMenuItem.Text = "Nacionalidades";
+            this.nacionalidadeToolStripMenuItem.Click += new System.EventHandler(this.nacionalidadeToolStripMenuItem_Click);
             // 
             // naturalidadeToolStripMenuItem
             // 
             this.naturalidadeToolStripMenuItem.Name = "naturalidadeToolStripMenuItem";
             this.naturalidadeToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.naturalidadeToolStripMenuItem.Text = "Naturalidade";
+            this.naturalidadeToolStripMenuItem.Click += new System.EventHandler(this.naturalidadeToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 

@@ -16,7 +16,7 @@ namespace AppModelo.Controller.Cadastros
         public List<NacionalidadeEntity> ObterTodasNacionalidades()
         {
             var repositorio = new NacionalidadeRepository();
-            var resposta = repositorio.ObterTodos();
+            var resposta = repositorio.GetObterTodos(repositorio.GetResultado());
             return (List<NacionalidadeEntity>)resposta;
         }
     }

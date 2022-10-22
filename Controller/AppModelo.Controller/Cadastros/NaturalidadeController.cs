@@ -1,5 +1,7 @@
 ﻿using AppModelo.Model.Domain.Entities;
+using AppModelo.Model.Infra.Repositories;
 using System.Collections.Generic;
+
 
 namespace AppModelo.Controller.Cadastros
 {
@@ -12,11 +14,11 @@ namespace AppModelo.Controller.Cadastros
             return (bool)resposta;
         }
 
-        public List<NaturalidadeEntity> ObterTodasNaturalidades()
+        public IEnumerable<NaturalidadeEntity> ObterTodasNaturalidades()
         {
             var repositorio = new NaturalidadeRepository();
-            var resposta = repositorio.ObterTodos();
-            return (List<NaturalidadeEntity>)resposta;
+            var resposta = repositorio.ObterTodos(repositorio.GetResultado());
+            return resposta;
         }
     }
 }
