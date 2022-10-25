@@ -79,7 +79,7 @@ namespace AppModelo.view.Windows.Cadastros
             errorProvider.Clear();
         }
 
-       //PEGA A DATA DE HOJE E ACRESCENTA 1 DIA
+        //PEGA A DATA DE HOJE E ACRESCENTA 1 DIA
         //DateTime.Now.AddDays(1);
     }
 }

@@ -303,6 +303,7 @@
             this.cmbNaturalidade.Name = "cmbNaturalidade";
             this.cmbNaturalidade.Size = new System.Drawing.Size(121, 28);
             this.cmbNaturalidade.TabIndex = 24;
+           
             // 
             // label13
             // 

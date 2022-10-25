@@ -33,26 +33,45 @@ namespace AppModelo.Model.Infra.Repositories
             return false;
         }
 
+        public IEnumerable<NaturalidadeEntity> ObterTodosAtivos()
+        {
+            var sql = "SELECT Id, Descricao FROM naturalidade WHERE ativo = true";
+            
+            using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
+
+            var resultado = conexaoBd.Query<NaturalidadeEntity>(sql);
+
+            return resultado;
+
+        }
+        public NaturalidadeEntity ObterPorId()
+        {
+            return new NaturalidadeEntity();
+        }
+
+        public NaturalidadeEntity ObterPorDescricao(string descricao)
+        {
+            //STRING INTERPOLATION
+            var sql = $"SELECT Id, Descricao FROM naturalidade WERE Descricao =('{descricao}')";
+
+            using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
+
+            var resultado = conexaoBd.QuerySingleOrDefault<NaturalidadeEntity>(sql);
+
+            return resultado;
+        }
         public IEnumerable<NaturalidadeEntity> ObterTodos()
         {
-            var sql = "SELECT Id, Descricao naturalidade ORDER BY descricao ASC";
+            var sql = "SELECT Id, Descricao FROM naturalidade ORDER BY descricao ASC";
 
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
 
             var resultado = conexaoBd.Query<NaturalidadeEntity>(sql);
 
             return resultado;
+
         }
 
-        public NaturalidadeEntity ObterPorId()
-        {
-            return new NaturalidadeEntity();
-        }
-
-        public List<NaturalidadeEntity> GetResultado()
-        {
-            return resultado;
-        }
     }
 }
 

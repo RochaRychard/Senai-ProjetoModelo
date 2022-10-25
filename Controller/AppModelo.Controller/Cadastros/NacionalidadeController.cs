@@ -6,7 +6,7 @@ namespace AppModelo.Controller.Cadastros
 {
     public class NacionalidadeController
     {
-        public bool Cadastrar(string descricao) 
+        public bool Cadastrar(string descricao)
         {
             var repositorio = new NacionalidadeRepository();
             var resposta = repositorio.Inserir(descricao);
@@ -16,7 +16,7 @@ namespace AppModelo.Controller.Cadastros
         public List<NacionalidadeEntity> ObterTodasNacionalidades()
         {
             var repositorio = new NacionalidadeRepository();
-            var resposta = repositorio.GetObterTodos(repositorio.GetResultado());
+            var resposta = repositorio.ObterTodos();
             return (List<NacionalidadeEntity>)resposta;
         }
     }

@@ -107,8 +107,9 @@
             this.btnSalvarDescricaoNaturalidade.TabIndex = 10;
             this.btnSalvarDescricaoNaturalidade.Text = "Salvar";
             this.btnSalvarDescricaoNaturalidade.UseVisualStyleBackColor = true;
+           
             // 
-            // Naturalidade
+            // frmNaturalidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +122,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgNaturalidade);
-            this.Name = "Naturalidade";
+            this.Name = "frmNaturalidade";
             this.Text = "Naturalidade";
             ((System.ComponentModel.ISupportInitialize)(this.dgNaturalidade)).EndInit();
             this.ResumeLayout(false);

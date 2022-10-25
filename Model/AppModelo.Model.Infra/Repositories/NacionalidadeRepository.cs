@@ -8,7 +8,7 @@ namespace AppModelo.Model.Infra.Repositories
 {
     public class NacionalidadeRepository
     {
-        private IEnumerable<NacionalidadeEntity> resultado;
+        
 
         //CRUD - create - read - update- delete
         //       insert - select - update - delete
@@ -34,21 +34,15 @@ namespace AppModelo.Model.Infra.Repositories
             return false;
          }
 
-        public IEnumerable<NacionalidadeEntity> GetResultado()
+        public IEnumerable<NacionalidadeEntity> ObterTodos()
         {
-            return resultado;
-        }
-
-        public IEnumerable<NacionalidadeEntity> GetObterTodos(IEnumerable<NacionalidadeEntity> resultado)
-        {
-            //var sql = "SELECT Id, Descricao nacionalidades ORDER BY descricao ASC";
-            var sql = "SELECT Id, Descricao FROM nacionalidades ORDER BY Descricao ASC";
+            var sql = "SELECT Id, Descricao FROM nacionalidades ORDER BY descricao ASC";
 
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
 
-            var v = conexaoBd.Query<NacionalidadeEntity>(sql);
+            var resultado = conexaoBd.Query<NacionalidadeEntity>(sql);
 
-            return v;
+            return resultado;
         }
 
         public NacionalidadeEntity ObterPorId() 

@@ -71,6 +71,18 @@
     <Compile Include="Cadastros\frmNaturalidade.Designer.cs">
       <DependentUpon>frmNaturalidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecuperarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarSenha.Designer.cs">
+      <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\FormatarCamposObrigatorios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +97,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmNaturalidade.resx">
       <DependentUpon>frmNaturalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarSenha.resx">
+      <DependentUpon>frmRecuperarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
