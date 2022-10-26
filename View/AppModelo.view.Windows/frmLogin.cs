@@ -1,4 +1,5 @@
-﻿using AppModelo.view.Windows.Cadastros;
+﻿using AppModelo.Model.Domain.Validator;
+using AppModelo.view.Windows.Cadastros;
 using System.Windows.Forms;
 
 namespace AppModelo.view.Windows
@@ -15,6 +16,16 @@ namespace AppModelo.view.Windows
             var form = new frmPrincipal();
             form.Show();
             form.Hide();
+
+            var email = txtEmail.Text;
+            var emailEhValido = Validadores.EmailEValido(email);
+
+            if (emailEhValido is false)
+            {
+                errorProvider1.SetError(txtEmail, "Email Inválido!");
+                return;
+            }
+            errorProvider1.Clear();
         }
 
         private void lblEsqueciMinhaSenha_Click(object sender, System.EventArgs e)

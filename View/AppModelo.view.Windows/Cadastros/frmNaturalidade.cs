@@ -18,7 +18,7 @@ namespace AppModelo.view.Windows.Cadastros
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            var salvou = _naturalidadeController.Cadastrar(txtDescricaoNaturalidade.Text);
+            var salvou = _naturalidadeController.Cadastrar(txtDescricaoNaturalidade.Text, chkStatus.Checked);
             if (salvou)
             {
                 MessageBox.Show("Naturalidade incluída com sucesso!");
@@ -28,6 +28,22 @@ namespace AppModelo.view.Windows.Cadastros
             {
                 MessageBox.Show("Houve um erro ao salvar no banco de dados!");
             }
+        }
+
+        private void btnSalvarDescricaoNaturalidade_Click(object sender, EventArgs e)
+        {
+            var temNumero = Helpers.Componentes.ExisteNumeroNoTexto(txtDescricaoNaturalidade.Text);
+            if (temNumero)
+            {
+                errorProvider1.SetError(txtDescricaoNaturalidade, "Naturalidade não pode conter números!");
+                txtDescricaoNaturalidade.Focus();
+                return;
+            }
+            var controler = new NaturalidadeController();
+            var descricaoMaiuscula = txtDescricaoNaturalidade.Text.ToUpper();
+
+            var resposta = controler.Cadastrar(descricaoMaiuscula, chkStatus.Checked);
+
         }
     }
 }

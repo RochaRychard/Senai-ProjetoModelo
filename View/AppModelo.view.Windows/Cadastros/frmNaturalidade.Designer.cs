@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgNaturalidade = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtIdNaturalidade = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescricaoNaturalidade = new System.Windows.Forms.TextBox();
-            this.chkAtivo = new System.Windows.Forms.CheckBox();
+            this.chkStatus = new System.Windows.Forms.CheckBox();
             this.btnSalvarDescricaoNaturalidade = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgNaturalidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgNaturalidade
@@ -54,14 +57,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(463, 36);
+            this.panel1.Size = new System.Drawing.Size(455, 36);
             this.panel1.TabIndex = 3;
             // 
             // txtIdNaturalidade
             // 
             this.txtIdNaturalidade.Location = new System.Drawing.Point(12, 66);
             this.txtIdNaturalidade.Name = "txtIdNaturalidade";
-            this.txtIdNaturalidade.Size = new System.Drawing.Size(100, 20);
+            this.txtIdNaturalidade.Size = new System.Drawing.Size(52, 20);
             this.txtIdNaturalidade.TabIndex = 5;
             // 
             // label2
@@ -86,36 +89,42 @@
             // 
             this.txtDescricaoNaturalidade.Location = new System.Drawing.Point(12, 124);
             this.txtDescricaoNaturalidade.Name = "txtDescricaoNaturalidade";
-            this.txtDescricaoNaturalidade.Size = new System.Drawing.Size(100, 20);
+            this.txtDescricaoNaturalidade.Size = new System.Drawing.Size(233, 20);
             this.txtDescricaoNaturalidade.TabIndex = 7;
             // 
-            // chkAtivo
+            // chkStatus
             // 
-            this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Location = new System.Drawing.Point(163, 66);
-            this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(50, 17);
-            this.chkAtivo.TabIndex = 8;
-            this.chkAtivo.Text = "Ativo";
-            this.chkAtivo.UseVisualStyleBackColor = true;
+            this.chkStatus.AutoSize = true;
+            this.chkStatus.Checked = true;
+            this.chkStatus.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkStatus.Location = new System.Drawing.Point(265, 126);
+            this.chkStatus.Name = "chkStatus";
+            this.chkStatus.Size = new System.Drawing.Size(50, 17);
+            this.chkStatus.TabIndex = 8;
+            this.chkStatus.Text = "Ativo";
+            this.chkStatus.UseVisualStyleBackColor = true;
             // 
             // btnSalvarDescricaoNaturalidade
             // 
-            this.btnSalvarDescricaoNaturalidade.Location = new System.Drawing.Point(118, 122);
+            this.btnSalvarDescricaoNaturalidade.Location = new System.Drawing.Point(373, 121);
             this.btnSalvarDescricaoNaturalidade.Name = "btnSalvarDescricaoNaturalidade";
             this.btnSalvarDescricaoNaturalidade.Size = new System.Drawing.Size(75, 23);
             this.btnSalvarDescricaoNaturalidade.TabIndex = 10;
             this.btnSalvarDescricaoNaturalidade.Text = "Salvar";
             this.btnSalvarDescricaoNaturalidade.UseVisualStyleBackColor = true;
-           
+            this.btnSalvarDescricaoNaturalidade.Click += new System.EventHandler(this.btnSalvarDescricaoNaturalidade_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmNaturalidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 345);
+            this.ClientSize = new System.Drawing.Size(455, 325);
             this.Controls.Add(this.btnSalvarDescricaoNaturalidade);
-            this.Controls.Add(this.chkAtivo);
+            this.Controls.Add(this.chkStatus);
             this.Controls.Add(this.txtDescricaoNaturalidade);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtIdNaturalidade);
@@ -125,6 +134,7 @@
             this.Name = "frmNaturalidade";
             this.Text = "Naturalidade";
             ((System.ComponentModel.ISupportInitialize)(this.dgNaturalidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,7 +147,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescricaoNaturalidade;
-        private System.Windows.Forms.CheckBox chkAtivo;
+        private System.Windows.Forms.CheckBox chkStatus;
         private System.Windows.Forms.Button btnSalvarDescricaoNaturalidade;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

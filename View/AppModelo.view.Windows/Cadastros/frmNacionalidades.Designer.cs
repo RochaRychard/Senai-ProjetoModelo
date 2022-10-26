@@ -60,14 +60,14 @@
             // 
             this.txtDescricao.Location = new System.Drawing.Point(12, 108);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(100, 20);
+            this.txtDescricao.Size = new System.Drawing.Size(161, 20);
             this.txtDescricao.TabIndex = 2;
             // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(12, 60);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.Size = new System.Drawing.Size(52, 20);
             this.txtId.TabIndex = 3;
             // 
             // gvNacionalidades
@@ -80,7 +80,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(118, 106);
+            this.btnSalvar.Location = new System.Drawing.Point(199, 105);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 5;

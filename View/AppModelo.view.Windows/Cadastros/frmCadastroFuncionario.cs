@@ -70,7 +70,8 @@ namespace AppModelo.view.Windows.Cadastros
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
             var email = txtEmail.Text;
-            var emailEhValido = Validadores.ValidarCPF(email);
+            var emailEhValido = Validadores.EmailEValido(email);
+            
             if(emailEhValido is false)
             {
                 errorProvider.SetError(txtEmail, "Email Inválido!");

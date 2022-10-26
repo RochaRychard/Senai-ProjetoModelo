@@ -1,7 +1,7 @@
 ﻿using AppModelo.Model.Domain.Entities;
 using Dapper;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Asn1.Ocsp;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -11,10 +11,11 @@ namespace AppModelo.Model.Infra.Repositories
     {
         //CRUD - create - read - update- delete
         //       insert - select - update - delete
-        public bool Inserir(string descricao)
+        public bool Inserir(string descricao, bool status)
         {
             //STRING INTERPOLATION
-            var sql = $"INSERT INTO naturalidade(Descricao) VALUES('{descricao}')";
+            var agora = DateTime.Now.ToString("u");
+            var sql = $"INSERT INTO naturalidade(Descricao, DataCriacao, DataAlteracao, Ativo) VALUES('{descricao}','{agora}', '{agora}', {status})";
 
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
 
@@ -52,7 +53,8 @@ namespace AppModelo.Model.Infra.Repositories
         public NaturalidadeEntity ObterPorDescricao(string descricao)
         {
             //STRING INTERPOLATION
-            var sql = $"SELECT Id, Descricao FROM naturalidade WERE Descricao =('{descricao}')";
+            var sql = $"SELECT Id, Descricao FROM naturalidade WHERE Descricao = '{descricao}' "; 
+
 
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
 
