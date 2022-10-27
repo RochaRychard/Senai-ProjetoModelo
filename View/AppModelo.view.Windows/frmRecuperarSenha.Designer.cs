@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtRecuperarSenha = new System.Windows.Forms.TextBox();
             this.btnRecuperarAcesso = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +65,7 @@
             this.btnRecuperarAcesso.TabIndex = 2;
             this.btnRecuperarAcesso.Text = "Recuperar Acesso";
             this.btnRecuperarAcesso.UseVisualStyleBackColor = true;
+            this.btnRecuperarAcesso.Click += new System.EventHandler(this.btnRecuperarAcesso_Click);
             // 
             // btnCancelar
             // 
@@ -81,6 +85,10 @@
             this.panel1.Size = new System.Drawing.Size(270, 49);
             this.panel1.TabIndex = 4;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmRecuperarSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,6 +102,7 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "frmRecuperarSenha";
             this.Text = "frmRecuperarSenha";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +115,6 @@
         private System.Windows.Forms.Button btnRecuperarAcesso;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

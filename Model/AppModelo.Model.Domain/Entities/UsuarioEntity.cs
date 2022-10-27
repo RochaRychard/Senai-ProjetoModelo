@@ -2,7 +2,7 @@
 
 namespace AppModelo.Model.Domain.Entities
 {
-    public class UsuariosEntity
+    public class UsuarioEntity
     {
         public int Id { get; set; }
         public string Nome { get; set; }

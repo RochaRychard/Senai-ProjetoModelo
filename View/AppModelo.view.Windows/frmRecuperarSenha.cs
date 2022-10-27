@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AppModelo.Model.Domain.Validator;
 using System.Windows.Forms;
 
 namespace AppModelo.view.Windows
@@ -16,5 +9,22 @@ namespace AppModelo.view.Windows
         {
             InitializeComponent();
         }
+
+        private void btnRecuperarAcesso_Click(object sender, System.EventArgs e)
+        {
+            
+            var email = txtRecuperarSenha.Text;
+            var emailEhValido = Validadores.EmailEValido(email);
+
+            if (emailEhValido is false)
+            {
+                errorProvider1.SetError(txtRecuperarSenha, "Email Inválido!");
+                txtRecuperarSenha.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+            
+        }
     }
 }
+
