@@ -1,4 +1,5 @@
-﻿using AppModelo.Model.Domain.Validator;
+﻿using AppModelo.Controller.Seguranca;
+using AppModelo.Model.Domain.Validator;
 using System.Windows.Forms;
 
 namespace AppModelo.view.Windows
@@ -13,16 +14,20 @@ namespace AppModelo.view.Windows
         private void btnRecuperarAcesso_Click(object sender, System.EventArgs e)
         {
             
-            var email = txtRecuperarSenha.Text;
+            var email = txtRecuperarEmail.Text;
             var emailEhValido = Validadores.EmailEValido(email);
 
             if (emailEhValido is false)
             {
-                errorProvider1.SetError(txtRecuperarSenha, "Email Inválido!");
-                txtRecuperarSenha.Focus();
+                errorProvider1.SetError(txtRecuperarEmail, "Email Inválido!");
+                txtRecuperarEmail.Focus();
                 return;
             }
             errorProvider1.Clear();
+
+            var controller = new UsuarioController();
+            var resultado = controller.RecuperarSenha(txtRecuperarEmail.Text);
+            MessageBox.Show(resultado);
             
         }
     }

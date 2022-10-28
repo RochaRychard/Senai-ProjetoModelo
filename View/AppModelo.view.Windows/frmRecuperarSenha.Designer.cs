@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtRecuperarSenha = new System.Windows.Forms.TextBox();
+            this.txtRecuperarEmail = new System.Windows.Forms.TextBox();
             this.btnRecuperarAcesso = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,12 +50,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Recuperar Senha";
             // 
-            // txtRecuperarSenha
+            // txtRecuperarEmail
             // 
-            this.txtRecuperarSenha.Location = new System.Drawing.Point(46, 125);
-            this.txtRecuperarSenha.Name = "txtRecuperarSenha";
-            this.txtRecuperarSenha.Size = new System.Drawing.Size(170, 20);
-            this.txtRecuperarSenha.TabIndex = 1;
+            this.txtRecuperarEmail.Location = new System.Drawing.Point(46, 125);
+            this.txtRecuperarEmail.Name = "txtRecuperarEmail";
+            this.txtRecuperarEmail.Size = new System.Drawing.Size(170, 20);
+            this.txtRecuperarEmail.TabIndex = 1;
             // 
             // btnRecuperarAcesso
             // 
@@ -97,7 +97,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnRecuperarAcesso);
-            this.Controls.Add(this.txtRecuperarSenha);
+            this.Controls.Add(this.txtRecuperarEmail);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "frmRecuperarSenha";
@@ -111,7 +111,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtRecuperarSenha;
+        private System.Windows.Forms.TextBox txtRecuperarEmail;
         private System.Windows.Forms.Button btnRecuperarAcesso;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel panel1;
