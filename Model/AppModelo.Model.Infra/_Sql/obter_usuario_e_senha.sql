@@ -1,2 +1,2 @@
 ﻿SELECT Email, Senha FROM usuarios
-WHERE Email = 'rocharychard@email.com' AND Senha = '12345';
+WHERE Email = 'rocharychard31@gmail.com' AND Senha = '12345';

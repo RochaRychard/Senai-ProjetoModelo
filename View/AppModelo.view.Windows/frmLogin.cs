@@ -31,7 +31,7 @@ namespace AppModelo.view.Windows
             {
                 var form = new frmPrincipal();
                 form.Show();
-                form.Hide();
+                //form.Hide();
             }
             else
             {

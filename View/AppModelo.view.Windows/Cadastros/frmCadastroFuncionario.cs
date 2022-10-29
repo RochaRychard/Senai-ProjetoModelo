@@ -10,6 +10,7 @@ namespace AppModelo.view.Windows.Cadastros
 {
     public partial class frmCadastroFuncionario : Form
     {
+        
         private NacionalidadeController _nacionalidadeController = new NacionalidadeController();
         public frmCadastroFuncionario()
         {
@@ -17,6 +18,7 @@ namespace AppModelo.view.Windows.Cadastros
             Componentes.FormatarCamposObrigatorios(this);
             cmbNacionalidade.DataSource = _nacionalidadeController.ObterTodasNacionalidades();
             cmbNacionalidade.DisplayMember = "Descricao";
+
              
         }
 
@@ -80,6 +82,7 @@ namespace AppModelo.view.Windows.Cadastros
             errorProvider.Clear();
         }
 
+        
         //PEGA A DATA DE HOJE E ACRESCENTA 1 DIA
         //DateTime.Now.AddDays(1);
     }

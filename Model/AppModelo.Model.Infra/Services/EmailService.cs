@@ -23,7 +23,7 @@ namespace AppModelo.Model.Infra.Services
                 {
                     client.Connect("smtp.gmail.com", 587, false);
 
-                    client.Authenticate("user_senai_temp@faceli.edu.br", "senai@2022");
+                    client.Authenticate("welton.castoldi@docente.senai.br", "thjqhgtpctrhbugt");
 
                     client.Send(mimeMessage);
                     client.Disconnect(true);

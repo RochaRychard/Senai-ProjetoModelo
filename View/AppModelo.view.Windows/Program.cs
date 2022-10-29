@@ -1,5 +1,4 @@
-﻿using AppModelo.view.Windows.Cadastros;
-using System;
+﻿using System;
 using System.Threading;
 using System.Windows.Forms;
 

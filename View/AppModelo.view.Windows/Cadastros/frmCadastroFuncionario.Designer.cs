@@ -68,6 +68,7 @@
             this.txtEnderecoCep = new System.Windows.Forms.MaskedTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -303,7 +304,6 @@
             this.cmbNaturalidade.Name = "cmbNaturalidade";
             this.cmbNaturalidade.Size = new System.Drawing.Size(121, 28);
             this.cmbNaturalidade.TabIndex = 24;
-           
             // 
             // label13
             // 
@@ -415,11 +415,25 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // btnCadastrarFuncionario
+            // 
+            this.btnCadastrarFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCadastrarFuncionario.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnCadastrarFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCadastrarFuncionario.Location = new System.Drawing.Point(610, 459);
+            this.btnCadastrarFuncionario.Name = "btnCadastrarFuncionario";
+            this.btnCadastrarFuncionario.Size = new System.Drawing.Size(139, 27);
+            this.btnCadastrarFuncionario.TabIndex = 38;
+            this.btnCadastrarFuncionario.Text = "Cadastrar";
+            this.btnCadastrarFuncionario.UseVisualStyleBackColor = true;
+            this.btnCadastrarFuncionario.Click += new System.EventHandler(this.btnCadastrarFuncionario_Click);
+            // 
             // frmCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 501);
+            this.ClientSize = new System.Drawing.Size(763, 513);
+            this.Controls.Add(this.btnCadastrarFuncionario);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.txtEnderecoCep);
             this.Controls.Add(this.txtEnderecoUf);
@@ -458,6 +472,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmCadastroFuncionario";
             this.Text = "frmCadastroFuncionario";
@@ -510,5 +525,6 @@
         private System.Windows.Forms.MaskedTextBox txtEnderecoCep;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Button btnCadastrarFuncionario;
     }
 }
