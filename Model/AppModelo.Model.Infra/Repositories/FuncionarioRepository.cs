@@ -11,18 +11,18 @@ namespace AppModelo.Model.Infra.Repositories
 
         //CRUD - create - read - update- delete
         //       insert - select - update - delete
-        public List<FuncionarioEntity> Inserir(List<FuncionarioEntity> dados)
+        public bool Inserir(string descricao)
         {
             //STRING INTERPOLATION
             var sql = $"INSERT INTO funcionarios(Nome, Data_Nascimento, Sexo, " +
                       $"Cpf, Nacionalidade, Naturalidade, Email, Telefone, " +
-                      $"Telefone_Contato, Cep, Logradouro, Numero, Complemento, Bairo, Municipio, Uf) VALUES('{dados}')";
+                      $"Telefone_Contato, Cep, Logradouro, Numero, Complemento, Bairo, Municipio, Uf) VALUES('{descricao}')";
 
             using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
 
-            var resultado = conexaoBd.Query(sql);
+            var resultado = conexaoBd.Execute(sql);
 
-            return (List<FuncionarioEntity>)resultado;
+            return resultado > 0;
         }
 
         public bool Atualizar()

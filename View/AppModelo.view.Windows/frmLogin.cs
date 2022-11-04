@@ -10,6 +10,8 @@ namespace AppModelo.view.Windows
         public frmLogin()
         {
             InitializeComponent();
+            txtEmail.Text = "admin@admin.com";
+            txtSenha.Text = "0000";
         }
 
         private void btnEntrar_Click(object sender, System.EventArgs e)

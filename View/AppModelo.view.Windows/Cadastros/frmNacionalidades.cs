@@ -17,16 +17,22 @@ namespace AppModelo.view.Windows.Cadastros
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            var salvou = _nacionalidadeController.Cadastrar(txtDescricao.Text);
+           
+            var salvou = _nacionalidadeController.Cadastrar(txtDescricaoNacionalidade.Text);
             if (salvou)
             {
                 MessageBox.Show("Nacionalidade incluída com sucesso!");
-                txtDescricao.Text = string.Empty;
+                txtDescricaoNacionalidade.Text = string.Empty;
             }
             else
             {
                 MessageBox.Show("Houve um erro ao salvar no banco de dados!");
             }
+
+            var controler = new NacionalidadeController();
+            var descricaoMaiuscula = txtDescricaoNacionalidade.Text.ToUpper();
+
+            var resposta = controler.Cadastrar(descricaoMaiuscula);
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.txtDescricaoNacionalidade = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.gvNacionalidades = new System.Windows.Forms.DataGridView();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -56,12 +56,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Id";
             // 
-            // txtDescricao
+            // txtDescricaoNacionalidade
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(12, 108);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(161, 20);
-            this.txtDescricao.TabIndex = 2;
+            this.txtDescricaoNacionalidade.Location = new System.Drawing.Point(12, 108);
+            this.txtDescricaoNacionalidade.Name = "txtDescricaoNacionalidade";
+            this.txtDescricaoNacionalidade.Size = new System.Drawing.Size(161, 20);
+            this.txtDescricaoNacionalidade.TabIndex = 2;
             // 
             // txtId
             // 
@@ -107,7 +107,7 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.gvNacionalidades);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.txtDescricaoNacionalidade);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmNacionalidades";
@@ -122,7 +122,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.TextBox txtDescricaoNacionalidade;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.DataGridView gvNacionalidades;
         private System.Windows.Forms.Button btnSalvar;

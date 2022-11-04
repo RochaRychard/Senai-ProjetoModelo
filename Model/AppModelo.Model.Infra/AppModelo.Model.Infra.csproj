@@ -123,6 +123,7 @@
     <Content Include="_Sql\create_table_usuarios.sql" />
     <Content Include="_Sql\inserindo_email_e_senha_no_banco_de_dados.sql" />
     <Content Include="_Sql\obter_usuario_e_senha.sql" />
+    <Content Include="_Sql\update_simples_na_tabela.sql" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

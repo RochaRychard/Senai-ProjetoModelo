@@ -16,22 +16,10 @@ namespace AppModelo.view.Windows.Cadastros
             dgNaturalidade.DataSource = listaDeNaturalidade;
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            var salvou = _naturalidadeController.Cadastrar(txtDescricaoNaturalidade.Text, chkStatus.Checked);
-            if (salvou)
-            {
-                MessageBox.Show("Naturalidade incluída com sucesso!");
-                txtDescricaoNaturalidade.Text = string.Empty;
-            }
-            else
-            {
-                MessageBox.Show("Houve um erro ao salvar no banco de dados!");
-            }
-        }
-
         private void btnSalvarDescricaoNaturalidade_Click(object sender, EventArgs e)
         {
+           
+
             var temNumero = Helpers.Componentes.ExisteNumeroNoTexto(txtDescricaoNaturalidade.Text);
             if (temNumero)
             {
@@ -39,11 +27,26 @@ namespace AppModelo.view.Windows.Cadastros
                 txtDescricaoNaturalidade.Focus();
                 return;
             }
+            else
+            {
+                
+                var salvou = _naturalidadeController.Cadastrar(txtDescricaoNaturalidade.Text, chkStatus.Checked);
+                if (salvou)
+                {
+                    MessageBox.Show("Naturalidade incluída com sucesso!");
+                    txtDescricaoNaturalidade.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("Houve um erro ao salvar no banco de dados!");
+                }
+                
+
+            }
             var controler = new NaturalidadeController();
             var descricaoMaiuscula = txtDescricaoNaturalidade.Text.ToUpper();
 
             var resposta = controler.Cadastrar(descricaoMaiuscula, chkStatus.Checked);
-
         }
     }
 }

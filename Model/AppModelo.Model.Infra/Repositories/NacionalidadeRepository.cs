@@ -45,6 +45,19 @@ namespace AppModelo.Model.Infra.Repositories
             return resultado;
         }
 
+        public NacionalidadeEntity ObterPorDescricao(string descricao)
+        {
+            //STRING INTERPOLATION
+            var sql = $"SELECT Id, Descricao FROM naturalidade WHERE Descricao = '{descricao}' ";
+
+
+            using IDbConnection conexaoBd = new MySqlConnection(Databases.MySql.ConectionString());
+
+            var resultado = conexaoBd.QuerySingleOrDefault<NacionalidadeEntity>(sql);
+
+            return resultado;
+        }
+
         public NacionalidadeEntity ObterPorId() 
          {
             return new NacionalidadeEntity();

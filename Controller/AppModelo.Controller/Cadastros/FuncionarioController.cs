@@ -2,6 +2,7 @@
 using AppModelo.Model.Infra.Repositories;
 using System.Collections.Generic;
 
+
 namespace AppModelo.Controller.Cadastros
 {
     public class FuncionarioController
@@ -9,15 +10,16 @@ namespace AppModelo.Controller.Cadastros
         public bool Cadastrar(string descricao)
         {
             var repositorio = new FuncionarioRepository();
+
             var resposta = repositorio.Inserir(descricao);
             return resposta;
         }
 
-        public List<FuncionarioEntity> ObterTodasNacionalidades()
+        public IEnumerable<FuncionarioEntity> ObterTodasNacionalidades()
         {
             var repositorio = new FuncionarioRepository();
             var resposta = repositorio.ObterTodos();
-            return (List<FuncionarioEntity>)resposta;
+            return (IEnumerable<FuncionarioEntity>)resposta;
         }
     }
 }

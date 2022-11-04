@@ -9,6 +9,10 @@ namespace AppModelo.Controller.Cadastros
         public bool Cadastrar(string descricao)
         {
             var repositorio = new NacionalidadeRepository();
+
+            var nacionalidade = repositorio.ObterPorDescricao(descricao);
+            if (nacionalidade is not null) return false;
+
             var resposta = repositorio.Inserir(descricao);
             return resposta;
         }

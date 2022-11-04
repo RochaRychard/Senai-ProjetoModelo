@@ -83,6 +83,7 @@ namespace AppModelo.view.Windows.Cadastros
         }
 
         
+
         //PEGA A DATA DE HOJE E ACRESCENTA 1 DIA
         //DateTime.Now.AddDays(1);
     }
