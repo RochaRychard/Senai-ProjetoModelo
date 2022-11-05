@@ -428,7 +428,7 @@
             this.btnCadastrarFuncionario.TabIndex = 38;
             this.btnCadastrarFuncionario.Text = "Cadastrar";
             this.btnCadastrarFuncionario.UseVisualStyleBackColor = true;
-            
+            this.btnCadastrarFuncionario.Click += new System.EventHandler(this.btnCadastrarFuncionario_Click);
             // 
             // errorProvider1
             // 
